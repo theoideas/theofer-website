@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { FolderGit2, Check, FileCheck, Compass, Eye, Filter } from "lucide-react";
+import { FolderGit2, Check, FileCheck, Compass, Eye, Filter, ArrowRight } from "lucide-react";
 
 export default function PortafolioGallery() {
   const [activeFilter, setActiveFilter] = useState("all");
