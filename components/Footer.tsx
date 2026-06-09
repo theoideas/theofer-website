@@ -1,27 +1,12 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { Compass, Landmark, ShieldCheck, Mail, Phone, MapPin, ArrowUp } from "lucide-react";
 
 export default function Footer() {
   const handleScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  const handleSectionScroll = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      const offset = 80;
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-    }
   };
 
   return (
@@ -55,36 +40,29 @@ export default function Footer() {
             <h4 className="text-xs font-bold text-white uppercase tracking-widest">Navegación</h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <button
-                  onClick={handleScrollToTop}
-                  className="hover:text-white transition-colors"
-                >
+                <Link href="/" className="hover:text-white transition-colors">
                   Inicio
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => handleSectionScroll("guia-internacional")}
-                  className="hover:text-white transition-colors"
-                >
-                  Guía Internacional
-                </button>
+                <Link href="/ingenieria-civil" className="hover:text-white transition-colors">
+                  Ingeniería Civil
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => handleSectionScroll("portafolio")}
-                  className="hover:text-white transition-colors"
-                >
-                  Portafolio Técnico
-                </button>
+                <Link href="/ingenieria-electrica" className="hover:text-white transition-colors">
+                  Ingeniería Eléctrica
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => handleSectionScroll("contacto")}
-                  className="hover:text-white transition-colors"
-                >
-                  Canal de Contacto
-                </button>
+                <Link href="/inversiones" className="hover:text-white transition-colors">
+                  Inversiones
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy-policy" className="hover:text-white transition-colors">
+                  Política de Privacidad
+                </Link>
               </li>
             </ul>
           </div>
@@ -164,3 +142,4 @@ export default function Footer() {
     </footer>
   );
 }
+
