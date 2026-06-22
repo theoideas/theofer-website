@@ -14,7 +14,21 @@ export default function PortafolioGallery() {
     { label: "Renders & 3D", value: "3d" }
   ];
 
-  const projects = [
+  type ProjectType = {
+    title: string;
+    category: string;
+    location: string;
+    details: string;
+    badge: string;
+    visualBg: string;
+    image?: string;
+    blueprintLines?: boolean;
+    solarGrid?: boolean;
+    waves?: boolean;
+    cameraGrid?: boolean;
+  };
+
+  const projects: ProjectType[] = [
     {
       title: "Cálculo Estructural Townhouses",
       category: "estructural",
