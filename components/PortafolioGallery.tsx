@@ -16,58 +16,58 @@ export default function PortafolioGallery() {
 
   const projects = [
     {
-      title: "Cálculo Estructural Townhouses 'El Oasis'",
+      title: "Cálculo Estructural Townhouses",
       category: "estructural",
-      location: "Isla de Margarita, Venezuela",
-      details: "Diseño estructural sismorresistente para conjunto de 6 townhouses. Modelado dinámico y planos estructurales de fundaciones y losas nervadas.",
+      location: "Venezuela",
+      details: "Diseño estructural y modelado para townhouses. Planos detallados de fundaciones y losas.",
       badge: "Ingeniería Civil",
       visualBg: "from-blue-900/60 to-slate-900",
-      blueprintLines: true
+      image: "/portfolio/TH_PL_EST_REV2-01.jpg"
     },
     {
-      title: "Planta Fotovoltaica Residencial 'Solaris II'",
+      title: "Proyecto Fotovoltaico Residencial",
       category: "energia",
-      location: "Lechería, Venezuela",
-      details: "Proyecto de ingeniería de una planta de energía solar fotovoltaica conectada a red de 35kW con respaldo de baterías de litio para climatización.",
+      location: "Venezuela",
+      details: "Ingeniería de planta fotovoltaica. Esquemas de paneles, cableado e inversores para energía limpia.",
       badge: "Energía Solar",
       visualBg: "from-cyan-900/60 to-slate-900",
-      solarGrid: true
+      image: "/portfolio/Proyecto-Fotovoltaico-lam-01.jpg"
     },
     {
-      title: "Red de Acueducto y Estación de Bombeo",
+      title: "Instalaciones de Agua Potable Cabrero",
       category: "hidraulica",
-      location: "Maneiro, Venezuela",
-      details: "Diseño y cálculo hidráulico de tuberías de aducción y distribución de agua potable con simulación de presiones y modelado de transitorios hidráulicos.",
+      location: "Cabrero",
+      details: "Diseño detallado de la red de agua potable e isométricos para el proyecto residencial Cabrero.",
       badge: "Hidráulica",
       visualBg: "from-teal-900/60 to-slate-900",
-      waves: true
+      image: "/portfolio/CASA-CABRERO-AGUA-POTABLE-AB-1.jpg"
     },
     {
-      title: "Render y Recorrido 3D 'Centro Comercial Playa'",
-      category: "3d",
-      location: "Porlamar, Venezuela",
-      details: "Modelado digital 3D, texturizado fotorrealista y renderizado de fachadas exteriores e interiores comerciales con video-recorrido inmersivo.",
-      badge: "Arquitectura 3D",
-      visualBg: "from-indigo-900/60 to-slate-900",
-      cameraGrid: true
-    },
-    {
-      title: "Cálculo de Muro de Contención Estructural",
-      category: "estructural",
-      location: "Pampatar, Venezuela",
-      details: "Ingeniería de detalle para estabilidad de taludes y cálculo de muro de contención en concreto ciclópeo para vialidad de acceso residencial costero.",
-      badge: "Infraestructura",
+      title: "Planos de Alcantarillado Cabrero",
+      category: "hidraulica",
+      location: "Cabrero",
+      details: "Ingeniería y diseño de la red de recolección de aguas servidas e instalaciones sanitarias.",
+      badge: "Sanitaria",
       visualBg: "from-sky-950 to-slate-900",
-      blueprintLines: true
+      image: "/portfolio/Casa-CABRERO-ALCANTARILLADO-AN-01.jpg"
     },
     {
-      title: "Proyecto de Iluminación y Fuerza Comercial",
+      title: "Detalles Estructurales Townhouses",
+      category: "estructural",
+      location: "Venezuela",
+      details: "Detalles constructivos, despiece de acero y especificaciones de pórticos principales.",
+      badge: "Estructuras",
+      visualBg: "from-indigo-900/60 to-slate-900",
+      image: "/portfolio/TH_PL_EST_REV2-03.jpg"
+    },
+    {
+      title: "Esquemas del Sistema Fotovoltaico",
       category: "energia",
-      location: "Isla de Margarita, Venezuela",
-      details: "Ingeniería eléctrica detallada para bodegón comercial. Incluye cálculo de carga, diagramas unifilares, y planos de luminarias inteligentes.",
+      location: "Venezuela",
+      details: "Diagramas unifilares y especificaciones de tableros eléctricos para instalación de sistemas solares.",
       badge: "Diseño Eléctrico",
       visualBg: "from-emerald-950 to-slate-900",
-      solarGrid: true
+      image: "/portfolio/Proyecto-Fotovoltaico-lam-02.jpg"
     }
   ];
 
@@ -124,39 +124,49 @@ export default function PortafolioGallery() {
               {/* Visual Card Top (Schematic Representation) */}
               <div className={`h-48 relative overflow-hidden bg-gradient-to-br ${proj.visualBg} flex items-center justify-center p-6 border-b border-gray-900`}>
                 
-                {/* SVG Blueprints overlay for design feel */}
-                {proj.blueprintLines && (
-                  <svg className="absolute inset-0 w-full h-full opacity-20 stroke-white/40" fill="none" strokeWidth="0.5">
-                    <line x1="0" y1="50%" x2="100%" y2="50%" />
-                    <line x1="30%" y1="0" x2="30%" y2="100%" />
-                    <line x1="70%" y1="0" x2="70%" y2="100%" />
-                    <circle cx="30%" cy="50%" r="40" />
-                    <rect x="10%" y="10%" width="80%" height="80%" />
-                  </svg>
-                )}
-                {proj.solarGrid && (
-                  <svg className="absolute inset-0 w-full h-full opacity-15 stroke-white/40" fill="none" strokeWidth="0.5">
-                    <path d="M 0,0 L 100%,100% M 100%,0 L 0,100%" />
-                    <rect x="25%" y="25%" width="50%" height="50%" />
-                    <line x1="50%" y1="0" x2="50%" y2="100%" />
-                    <line x1="0" y1="50%" x2="100%" y2="50%" />
-                  </svg>
-                )}
-                {proj.waves && (
-                  <svg className="absolute inset-0 w-full h-full opacity-20 stroke-white/40" fill="none" strokeWidth="1">
-                    <path d="M 0,40 Q 25,20 50,40 T 100,40 T 150,40 T 200,40 T 250,40 T 300,40 T 350,40 T 400,40" />
-                    <path d="M 0,60 Q 25,40 50,60 T 100,60 T 150,60 T 200,60 T 250,60 T 300,60 T 350,60 T 400,60" />
-                    <path d="M 0,80 Q 25,60 50,80 T 100,80 T 150,80 T 200,80 T 250,80 T 300,80 T 350,80 T 400,80" />
-                  </svg>
-                )}
-                {proj.cameraGrid && (
-                  <svg className="absolute inset-0 w-full h-full opacity-25 stroke-white/40" fill="none" strokeWidth="0.5">
-                    <circle cx="50%" cy="50%" r="50" />
-                    <circle cx="50%" cy="50%" r="10" />
-                    <rect x="5%" y="5%" width="90%" height="90%" rx="10" />
-                    <line x1="50%" y1="0" x2="50%" y2="100%" />
-                    <line x1="0" y1="50%" x2="100%" y2="50%" />
-                  </svg>
+                {/* Background rendering logic */}
+                {proj.image ? (
+                  <img 
+                    src={proj.image} 
+                    alt={proj.title} 
+                    className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-luminosity group-hover:mix-blend-normal group-hover:scale-110 group-hover:opacity-90 transition-all duration-700 ease-out" 
+                  />
+                ) : (
+                  <>
+                    {proj.blueprintLines && (
+                      <svg className="absolute inset-0 w-full h-full opacity-20 stroke-white/40" fill="none" strokeWidth="0.5">
+                        <line x1="0" y1="50%" x2="100%" y2="50%" />
+                        <line x1="30%" y1="0" x2="30%" y2="100%" />
+                        <line x1="70%" y1="0" x2="70%" y2="100%" />
+                        <circle cx="30%" cy="50%" r="40" />
+                        <rect x="10%" y="10%" width="80%" height="80%" />
+                      </svg>
+                    )}
+                    {proj.solarGrid && (
+                      <svg className="absolute inset-0 w-full h-full opacity-15 stroke-white/40" fill="none" strokeWidth="0.5">
+                        <path d="M 0,0 L 100%,100% M 100%,0 L 0,100%" />
+                        <rect x="25%" y="25%" width="50%" height="50%" />
+                        <line x1="50%" y1="0" x2="50%" y2="100%" />
+                        <line x1="0" y1="50%" x2="100%" y2="50%" />
+                      </svg>
+                    )}
+                    {proj.waves && (
+                      <svg className="absolute inset-0 w-full h-full opacity-20 stroke-white/40" fill="none" strokeWidth="1">
+                        <path d="M 0,40 Q 25,20 50,40 T 100,40 T 150,40 T 200,40 T 250,40 T 300,40 T 350,40 T 400,40" />
+                        <path d="M 0,60 Q 25,40 50,60 T 100,60 T 150,60 T 200,60 T 250,60 T 300,60 T 350,60 T 400,60" />
+                        <path d="M 0,80 Q 25,60 50,80 T 100,80 T 150,80 T 200,80 T 250,80 T 300,80 T 350,80 T 400,80" />
+                      </svg>
+                    )}
+                    {proj.cameraGrid && (
+                      <svg className="absolute inset-0 w-full h-full opacity-25 stroke-white/40" fill="none" strokeWidth="0.5">
+                        <circle cx="50%" cy="50%" r="50" />
+                        <circle cx="50%" cy="50%" r="10" />
+                        <rect x="5%" y="5%" width="90%" height="90%" rx="10" />
+                        <line x1="50%" y1="0" x2="50%" y2="100%" />
+                        <line x1="0" y1="50%" x2="100%" y2="50%" />
+                      </svg>
+                    )}
+                  </>
                 )}
 
                 <div className="relative z-10 flex flex-col items-center text-center gap-2">

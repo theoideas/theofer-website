@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 :root {
   --background: #030712; /* Deep Slate/Black */
@@ -29,6 +30,18 @@
   --color-cyber-teal: #00f2fe;
   --color-cyber-blue: #4facfe;
   --color-cyber-indigo: #6366f1;
+  
+  /* Animations */
+  --animate-aurora: aurora 60s linear infinite;
+  
+  @keyframes aurora {
+    from {
+      background-position: 50% 50%, 50% 50%;
+    }
+    to {
+      background-position: 350% 50%, 350% 50%;
+    }
+  }
 }
 
 /* Custom Base Styles */
@@ -93,6 +106,15 @@ body {
   animation: float 6s ease-in-out infinite;
 }
 
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
 @keyframes pulse-slow {
   0%, 100% { opacity: 0.3; }
   50% { opacity: 0.6; }
@@ -115,4 +137,14 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.2);
+}
+
+/* Aurora Background Variables & Animations */
+:root {
+  --aurora-1: #C5891B; /* Requested Gold */
+  --aurora-2: #151E27; /* Requested Dark Navy */
+  --aurora-3: #2F4143; /* Requested Dark Teal */
+  --white: #ffffff;
+  --black: #000000;
+  --transparent: transparent;
 }

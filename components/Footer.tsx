@@ -14,7 +14,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Footer Top */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
           
           {/* Brand Info */}
           <div className="space-y-4">
@@ -22,97 +22,38 @@ export default function Footer() {
               <span className="text-xl font-bold tracking-wider text-white">
                 THEO<span className="text-gold-500">FER</span>
               </span>
-              <span className="text-[9px] tracking-[0.25em] text-gray-500 uppercase font-semibold">
-                Ingeniería & Inversiones
-              </span>
             </div>
             <p className="text-xs text-gray-500 leading-relaxed font-light">
-              Plataforma integral Design-Build. Unimos la ingeniería digital (cálculos, planos y renderizados 3D) con el desarrollo y construcción física en la Isla de Margarita.
+              theoferllc
             </p>
-            <div className="flex items-center gap-2 text-xs text-gray-500">
-              <ShieldCheck size={14} className="text-gold-500" />
-              <span>Proyectos e Inversiones Certificadas</span>
-            </div>
           </div>
 
           {/* Quick Sitemap Links */}
           <div className="space-y-4">
-            <h4 className="text-xs font-bold text-white uppercase tracking-widest">Navegación</h4>
+            <h4 className="text-xs font-bold text-white uppercase tracking-widest">Conoce nuestros servicios</h4>
             <ul className="space-y-2 text-xs">
-              <li>
-                <Link href="/" className="hover:text-white transition-colors">
-                  Inicio
-                </Link>
-              </li>
-              <li>
-                <Link href="/ingenieria-civil" className="hover:text-white transition-colors">
-                  Ingeniería Civil
-                </Link>
-              </li>
-              <li>
-                <Link href="/ingenieria-electrica" className="hover:text-white transition-colors">
-                  Ingeniería Eléctrica
-                </Link>
-              </li>
-              <li>
-                <Link href="/inversiones" className="hover:text-white transition-colors">
-                  Inversiones
-                </Link>
-              </li>
               <li>
                 <Link href="/privacy-policy" className="hover:text-white transition-colors">
                   Política de Privacidad
                 </Link>
               </li>
-            </ul>
-          </div>
-
-          {/* Detailed Services list for SEO */}
-          <div className="space-y-4">
-            <h4 className="text-xs font-bold text-white uppercase tracking-widest">Servicios</h4>
-            <ul className="space-y-2 text-xs text-gray-500">
-              <li className="flex items-center gap-1.5">
-                <span className="w-1 h-1 rounded-full bg-cyber-teal"></span>
-                Cálculos Estructurales
-              </li>
-              <li className="flex items-center gap-1.5">
-                <span className="w-1 h-1 rounded-full bg-cyber-teal"></span>
-                Energía Fotovoltaica
-              </li>
-              <li className="flex items-center gap-1.5">
-                <span className="w-1 h-1 rounded-full bg-cyber-teal"></span>
-                Proyectos Hidráulicos
-              </li>
-              <li className="flex items-center gap-1.5">
-                <span className="w-1 h-1 rounded-full bg-cyber-teal"></span>
-                Venta de Terrenos (Margarita)
-              </li>
-              <li className="flex items-center gap-1.5">
-                <span className="w-1 h-1 rounded-full bg-gold-500"></span>
-                Construcción Llave en Mano
-              </li>
-            </ul>
-          </div>
-
-          {/* Quick Contact info */}
-          <div className="space-y-4">
-            <h4 className="text-xs font-bold text-white uppercase tracking-widest">Oficina Central</h4>
-            <ul className="space-y-3 text-xs">
-              <li className="flex items-start gap-2">
-                <MapPin size={14} className="text-gold-500 shrink-0 mt-0.5" />
-                <span className="text-gray-500 leading-normal">
-                  Sector Pampatar, Municipio Maneiro, Nueva Esparta, Venezuela.
+              <li>
+                <span className="hover:text-white transition-colors cursor-pointer">
+                  Términos y políticas
                 </span>
               </li>
-              <li className="flex items-center gap-2">
-                <Phone size={14} className="text-gold-500 shrink-0" />
-                <span className="text-gray-400 font-semibold">+58 424 888 8888</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <Mail size={14} className="text-gold-500 shrink-0" />
-                <span className="text-gray-400">contacto@theofer.com</span>
-              </li>
             </ul>
+          </div>
+
+          {/* Subscribe */}
+          <div className="space-y-4">
+            <h4 className="text-xs font-bold text-white uppercase tracking-widest">Suscríbete</h4>
+            <div className="flex flex-col gap-2">
+              <input type="email" placeholder="Correo electrónico" className="bg-gray-900 border border-gray-800 text-white text-xs px-4 py-2 rounded-lg outline-none focus:border-gold-500 transition-colors" />
+              <button className="bg-gold-600 hover:bg-gold-500 text-black text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-lg transition-colors">
+                Suscribirse
+              </button>
+            </div>
           </div>
 
         </div>
@@ -121,10 +62,7 @@ export default function Footer() {
         <div className="border-t border-gray-900 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-600">
           <div className="text-center sm:text-left space-y-1">
             <p>
-              THEOFER LLC © {new Date().getFullYear()}. Todos los derechos reservados.
-            </p>
-            <p className="text-[10px] text-gray-700">
-              Las planificaciones de obras y lotes de terrenos se rigen por la legislación y normativas urbanísticas de la República Bolivariana de Venezuela.
+              © {new Date().getFullYear()} theoferllc, Powered By CREARTEBRANDS
             </p>
           </div>
           

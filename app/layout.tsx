@@ -51,7 +51,7 @@ export default function RootLayout({
     >
       <body suppressHydrationWarning className="min-h-full flex flex-col bg-[#030712] text-gray-100 selection:bg-gold-500 selection:text-black">
         <Header />
-        <main className="flex-grow">
+        <main className="flex-grow pt-20">
           {children}
         </main>
         <Footer />

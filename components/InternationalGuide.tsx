@@ -35,15 +35,15 @@ export default function InternationalGuide() {
     },
     {
       icon: Eye,
-      title: "Supervisión Visual en Alta Definición",
-      subtitle: "Tus ojos en la obra todos los fines de semana",
-      desc: "Entendemos la preocupación de no estar en el sitio para inspeccionar la obra. Por ello, implementamos una bitácora digital interactiva a la que accedes con usuario único. Cargamos reportes semanales del estado del proyecto para tu absoluta tranquilidad.",
-      badge: "Transparencia Total",
+      title: "Reportes Periódicos de Obra",
+      subtitle: "Mantente al tanto desde cualquier lugar",
+      desc: "Entendemos la preocupación de no estar en el sitio para inspeccionar la obra. Por ello, te enviamos reportes periódicos y fotografías sobre el avance y estado del proyecto para tu absoluta tranquilidad y transparencia.",
+      badge: "Transparencia",
       bulletPoints: [
-        "Videos aéreos grabados con Dron 4K.",
-        "Fotografías en alta resolución del vaciado y acabados.",
-        "Videollamadas mensuales en vivo desde el lote de construcción.",
-        "Comparación de planos digitales vs. avance físico."
+        "Fotografías del avance físico de la construcción.",
+        "Reportes detallados de las etapas completadas.",
+        "Comunicación constante con el equipo supervisor.",
+        "Comparación de planificación vs. avance real."
       ]
     },
     {

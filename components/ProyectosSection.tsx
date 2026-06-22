@@ -65,81 +65,46 @@ export default function ProyectosSection() {
       <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-cyber-teal/5 rounded-full blur-[100px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <span className="text-cyber-teal text-xs font-bold uppercase tracking-[0.2em] border-b border-cyber-teal/30 pb-2">
-            TheoFer Proyectos • Estudio Digital
-          </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
-            Ingeniería de Precisión y Renders sin Fronteras
-          </h2>
-          <p className="text-gray-400 text-sm sm:text-base md:text-lg">
-            Facilitamos el desarrollo de tus obras con cálculos estructurales certificados, planos de instalaciones y representaciones 3D. Entregamos soluciones digitales completas que cumplen las normas vigentes.
-          </p>
-        </div>
-
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
-          {services.map((svc, i) => {
-            const Icon = svc.icon;
-            return (
-              <div
-                key={i}
-                className="glass-panel-cyber p-8 rounded-2xl flex flex-col justify-between hover:scale-[1.01] hover:border-cyber-teal/30 hover:shadow-lg hover:shadow-cyber-teal/5 transition-all duration-300 group"
-              >
-                <div>
-                  <div className="flex justify-between items-center mb-6">
-                    <div className="p-3 bg-cyber-teal/10 rounded-xl text-cyber-teal border border-cyber-teal/20 group-hover:bg-cyber-teal/20 transition-colors">
-                      <Icon size={24} />
-                    </div>
-                    <span className="text-xs text-cyber-teal/80 font-bold uppercase tracking-wider bg-cyber-teal/5 px-3 py-1 rounded-full border border-cyber-teal/10">
-                      {svc.tag}
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyber-teal transition-colors">
-                    {svc.title}
-                  </h3>
-                  <p className="text-gray-400 text-sm sm:text-base leading-relaxed mb-6">
-                    {svc.desc}
-                  </p>
-                </div>
-                <div className="border-t border-gray-900 pt-6 mt-4">
-                  <h4 className="text-xs uppercase tracking-wider text-gray-500 font-semibold mb-3">
-                    Incluye en el entregable:
-                  </h4>
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    {svc.features.map((feat, idx) => (
-                      <li key={idx} className="text-xs text-gray-300 flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-cyber-teal"></span>
-                        {feat}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Digital Workflow */}
-        <div className="border border-gray-800/60 bg-gray-900/20 p-8 sm:p-12 rounded-3xl backdrop-blur-sm">
-          <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
-            <h3 className="text-2xl font-bold text-white">¿Cómo trabajamos digitalmente?</h3>
-            <p className="text-gray-400 text-sm">
-              Hemos simplificado nuestra metodología para darte un servicio eficiente desde cualquier parte del mundo.
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          {/* Ingeniería Civil */}
+          <div className="space-y-6">
+            <h2 className="text-3xl font-extrabold text-white">Ingeniería civil pensada para construir con criterio, seguridad y durabilidad.</h2>
+            <p className="text-gray-400">
+              La ingeniería civil es la base estructural de cualquier proyecto. Errores en esta etapa pueden comprometer la seguridad, la funcionalidad y la rentabilidad de una obra.
             </p>
+            <div className="pt-4">
+              <h4 className="text-white font-bold mb-2">Qué hacemos</h4>
+              <p className="text-gray-400 mb-2">Desarrollamos proyectos de ingeniería civil para:</p>
+              <ul className="text-gray-400 space-y-1 list-disc pl-5">
+                <li>Obras residenciales</li>
+                <li>Proyectos comerciales</li>
+                <li>Infraestructura privada</li>
+                <li>Desarrollo de terrenos</li>
+                <li>Proyectos inmobiliarios</li>
+              </ul>
+              <p className="text-gray-400 mt-4">Nuestro enfoque busca garantizar estabilidad, funcionalidad y viabilidad real.</p>
+            </div>
+            <div className="pt-6">
+              <button className="px-6 py-3 rounded-full bg-cyber-teal text-black text-xs font-bold uppercase tracking-wider hover:scale-105 transition-all">
+                Quiero una evaluación estructural
+              </button>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {workflowSteps.map((step, i) => (
-              <div key={i} className="relative group p-4 border border-transparent hover:border-gray-800/40 rounded-xl transition-all">
-                <div className="text-4xl font-extrabold text-gray-800 group-hover:text-cyber-teal/20 transition-colors mb-4">
-                  {step.num}
-                </div>
-                <h4 className="text-base font-bold text-white mb-2">{step.title}</h4>
-                <p className="text-xs text-gray-400 leading-relaxed">{step.desc}</p>
-              </div>
-            ))}
+          {/* Ingeniería Eléctrica */}
+          <div className="space-y-6">
+            <h2 className="text-3xl font-extrabold text-white">Ingeniería Eléctrica</h2>
+            <p className="text-gray-400">
+              La ingeniería eléctrica es uno de los pilares más críticos de cualquier proyecto. Un diseño inadecuado no solo genera fallas técnicas, sino también sobrecostos, riesgos operativos y problemas legales.
+            </p>
+            <p className="text-gray-400">
+              En Theofer desarrollamos soluciones eléctricas seguras, eficientes y adaptadas al entorno, siempre bajo criterios normativos y técnicos actualizados.
+            </p>
+            <div className="pt-6">
+              <button className="px-6 py-3 rounded-full bg-cyber-teal text-black text-xs font-bold uppercase tracking-wider hover:scale-105 transition-all">
+                Solicitar evaluación estructural
+              </button>
+            </div>
           </div>
         </div>
       </div>
