@@ -22,6 +22,7 @@ export default function Header() {
     { label: "Inicio", href: "/" },
     { label: "Inversiones", href: "/inversiones" },
     { label: "Proyectos", href: "/proyectos" },
+    { label: "Contacto", href: "/contacto" },
   ];
 
   const isActive = (href: string) => {
@@ -33,9 +34,9 @@ export default function Header() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-        ? "glass-panel py-3 shadow-lg backdrop-blur-md bg-opacity-70"
-        : "bg-transparent py-5"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${scrolled
+        ? "bg-gray-950/80 py-3 shadow-lg backdrop-blur-md border-white/10"
+        : "bg-transparent py-5 border-transparent"
         }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center relative z-50">
@@ -69,24 +70,25 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Action Button */}
         <div className="hidden md:flex items-center">
           <Link
-            href="/#contacto"
+            href="/contacto"
             className="px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 transform hover:-translate-y-0.5 shadow-md flex items-center gap-2 bg-white text-black hover:bg-gray-200"
           >
             <PhoneCall size={13} />
-            Contacto Directo
+            Hablemos sobre tu proyecto
           </Link>
         </div>
 
         {/* Mobile Menu Toggle */}
-        <div className="md:hidden flex items-center">
+        <div className="md:hidden flex items-center relative z-[60]">
           <button
+            type="button"
             onClick={() => setIsOpen(!isOpen)}
-            className="text-gray-300 hover:text-white focus:outline-none p-1 bg-gray-900/40 rounded border border-gray-800"
+            className="text-gray-300 hover:text-white focus:outline-none p-3 bg-gray-900/40 rounded-xl border border-gray-800 touch-manipulation"
+            aria-label="Alternar menú"
           >
-            {isOpen ? <X size={20} /> : <Menu size={20} />}
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
@@ -123,12 +125,12 @@ export default function Header() {
           {/* Call CTA in Drawer */}
           <div>
             <Link
-              href="/#contacto"
+              href="/contacto"
               onClick={() => setIsOpen(false)}
               className="w-full py-3 rounded-xl text-center text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2 bg-white text-black hover:bg-gray-200"
             >
               <PhoneCall size={16} />
-              Iniciar Asesoría
+              Hablemos sobre tu proyecto
             </Link>
           </div>
         </div>
