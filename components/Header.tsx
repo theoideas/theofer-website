@@ -33,12 +33,7 @@ export default function Header() {
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${scrolled
-        ? "bg-gray-950/80 py-3 shadow-lg backdrop-blur-md border-white/10"
-        : "bg-transparent py-5 border-transparent"
-        }`}
-    >
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#030712] py-5 border-b border-gray-900">
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center relative z-50">
         {/* Logo */}
         <Link href="/" className="flex flex-col cursor-pointer group">
@@ -54,15 +49,16 @@ export default function Header() {
 
         {/* Desktop Nav Items */}
         <div className="hidden md:flex items-center gap-8">
-          <div className="flex items-center gap-6 bg-gray-950/60 p-1.5 rounded-full border border-gray-800">
+          <div className="flex items-center gap-6 bg-gray-900 p-1.5 rounded-full border border-gray-800">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all ${isActive(item.href)
-                  ? "bg-white text-black shadow-md"
-                  : "text-gray-400 hover:text-white"
-                  }`}
+                className={`px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all ${
+                  isActive(item.href)
+                    ? "bg-white text-black shadow-md"
+                    : "text-gray-400 hover:text-white"
+                }`}
               >
                 {item.label}
               </Link>
@@ -81,11 +77,11 @@ export default function Header() {
         </div>
 
         {/* Mobile Menu Toggle */}
-        <div className="md:hidden flex items-center relative z-[60]">
+        <div className="md:hidden flex items-center relative z-50">
           <button
             type="button"
             onClick={() => setIsOpen(!isOpen)}
-            className="text-gray-300 hover:text-white focus:outline-none p-3 bg-gray-900/40 rounded-xl border border-gray-800 touch-manipulation"
+            className="text-gray-300 hover:text-white focus:outline-none p-3 bg-gray-900/60 rounded-xl border border-gray-800 touch-manipulation"
             aria-label="Alternar menú"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -95,10 +91,11 @@ export default function Header() {
 
       {/* Mobile Menu Drawer */}
       <div
-        className={`fixed inset-y-0 right-0 z-40 w-80 bg-gray-950 border-l border-gray-800 shadow-2xl p-6 transition-all duration-300 transform ${isOpen ? "translate-x-0 pointer-events-auto" : "translate-x-full pointer-events-none"
-          }`}
+        className={`fixed inset-y-0 right-0 z-40 w-full bg-[#030712] shadow-2xl p-6 transition-transform duration-300 transform ${
+          isOpen ? "translate-x-0 pointer-events-auto" : "translate-x-full pointer-events-none"
+        }`}
       >
-        <div className="flex flex-col h-full justify-between pt-12">
+        <div className="flex flex-col h-full justify-between pt-24 pb-6 overflow-y-auto">
           <div className="space-y-8">
             <div>
               <h3 className="text-xs uppercase tracking-widest text-gray-500 mb-3 font-semibold">
@@ -110,10 +107,11 @@ export default function Header() {
                     key={item.href}
                     href={item.href}
                     onClick={() => setIsOpen(false)}
-                    className={`w-full py-2.5 px-4 rounded-lg text-left text-sm font-semibold tracking-wider uppercase transition-all ${isActive(item.href)
-                      ? "bg-white text-black"
-                      : "bg-gray-900/60 text-gray-300 hover:bg-gray-900"
-                      }`}
+                    className={`w-full py-2.5 px-4 rounded-lg text-left text-sm font-semibold tracking-wider uppercase transition-all ${
+                      isActive(item.href)
+                        ? "bg-white text-black"
+                        : "bg-gray-900/60 text-gray-300 hover:bg-gray-800"
+                    }`}
                   >
                     {item.label}
                   </Link>
@@ -123,7 +121,7 @@ export default function Header() {
           </div>
 
           {/* Call CTA in Drawer */}
-          <div>
+          <div className="mt-8">
             <Link
               href="/contacto"
               onClick={() => setIsOpen(false)}
