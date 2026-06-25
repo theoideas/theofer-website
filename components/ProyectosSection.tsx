@@ -59,33 +59,33 @@ export default function ProyectosSection() {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden bg-gray-950">
+    <section className="py-24 relative overflow-hidden bg-slate-50 border-t border-slate-100">
       {/* Background patterns */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:40px_40px]"></div>
-      <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-cyber-teal/5 rounded-full blur-[100px] pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+      <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-gold-500/10 rounded-full blur-[100px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Ingeniería Civil */}
           <div className="space-y-6">
-            <h2 className="text-3xl font-extrabold text-white">Ingeniería civil pensada para construir con criterio, seguridad y durabilidad.</h2>
-            <p className="text-gray-400">
+            <h2 className="text-3xl font-extrabold text-navy-main">Ingeniería civil pensada para construir con criterio, seguridad y durabilidad.</h2>
+            <p className="text-slate-600">
               La ingeniería civil es la base estructural de cualquier proyecto. Errores en esta etapa pueden comprometer la seguridad, la funcionalidad y la rentabilidad de una obra.
             </p>
             <div className="pt-4">
-              <h4 className="text-white font-bold mb-2">Qué hacemos</h4>
-              <p className="text-gray-400 mb-2">Desarrollamos proyectos de ingeniería civil para:</p>
-              <ul className="text-gray-400 space-y-1 list-disc pl-5">
+              <h4 className="text-navy-main font-bold mb-2">Qué hacemos</h4>
+              <p className="text-slate-600 mb-2">Desarrollamos proyectos de ingeniería civil para:</p>
+              <ul className="text-slate-600 space-y-1 list-disc pl-5">
                 <li>Obras residenciales</li>
                 <li>Proyectos comerciales</li>
                 <li>Infraestructura privada</li>
                 <li>Desarrollo de terrenos</li>
                 <li>Proyectos inmobiliarios</li>
               </ul>
-              <p className="text-gray-400 mt-4">Nuestro enfoque busca garantizar estabilidad, funcionalidad y viabilidad real.</p>
+              <p className="text-slate-600 mt-4">Nuestro enfoque busca garantizar estabilidad, funcionalidad y viabilidad real.</p>
             </div>
             <div className="pt-6">
-              <button className="px-6 py-3 rounded-full bg-cyber-teal text-black text-xs font-bold uppercase tracking-wider hover:scale-105 transition-all">
+              <button className="px-6 py-3 rounded-full bg-gold-500 text-white text-xs font-bold uppercase tracking-wider hover:bg-gold-600 hover:scale-105 shadow-md transition-all">
                 Quiero una evaluación estructural
               </button>
             </div>
@@ -93,16 +93,25 @@ export default function ProyectosSection() {
 
           {/* Ingeniería Eléctrica */}
           <div className="space-y-6">
-            <h2 className="text-3xl font-extrabold text-white">Ingeniería Eléctrica</h2>
-            <p className="text-gray-400">
+            <h2 className="text-3xl font-extrabold text-navy-main">Ingeniería Eléctrica</h2>
+            <p className="text-slate-600">
               La ingeniería eléctrica es uno de los pilares más críticos de cualquier proyecto. Un diseño inadecuado no solo genera fallas técnicas, sino también sobrecostos, riesgos operativos y problemas legales.
             </p>
-            <p className="text-gray-400">
-              En Theofer desarrollamos soluciones eléctricas seguras, eficientes y adaptadas al entorno, siempre bajo criterios normativos y técnicos actualizados.
-            </p>
+            <div className="pt-4">
+              <h4 className="text-navy-main font-bold mb-2">Qué hacemos</h4>
+              <p className="text-slate-600 mb-2">Desarrollamos soluciones eléctricas y energéticas para:</p>
+              <ul className="text-slate-600 space-y-1 list-disc pl-5">
+                <li>Diseño de instalaciones residenciales y comerciales</li>
+                <li>Sistemas de energía solar fotovoltaica</li>
+                <li>Cálculo de cargas, iluminación y tableros</li>
+                <li>Sistemas de respaldo (Plantas eléctricas y UPS)</li>
+                <li>Auditorías y optimización de consumo</li>
+              </ul>
+              <p className="text-slate-600 mt-4">En Theofer desarrollamos sistemas seguros, eficientes y adaptados al entorno, garantizando el cumplimiento normativo.</p>
+            </div>
             <div className="pt-6">
-              <button className="px-6 py-3 rounded-full bg-cyber-teal text-black text-xs font-bold uppercase tracking-wider hover:scale-105 transition-all">
-                Solicitar evaluación estructural
+              <button className="px-6 py-3 rounded-full bg-navy-main text-white text-xs font-bold uppercase tracking-wider hover:bg-slate-800 hover:scale-105 shadow-md transition-all">
+                Solicitar evaluación eléctrica
               </button>
             </div>
           </div>

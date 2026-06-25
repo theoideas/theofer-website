@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { Landmark, CheckCircle, BarChart, Compass, Home, Shield, Plane } from "lucide-react";
 
 export default function InversionesSection() {
@@ -47,7 +48,7 @@ export default function InversionesSection() {
   };
 
   return (
-    <section className="py-24 relative overflow-hidden bg-[#03060c]">
+    <section className="py-24 relative overflow-hidden bg-slate-50 border-t border-slate-100">
       {/* Background patterns */}
       <div className="absolute inset-0 bg-gradient-gold-radial opacity-40 pointer-events-none"></div>
       <div className="absolute top-1/4 right-0 w-[450px] h-[450px] bg-gold-600/5 rounded-full blur-[120px] pointer-events-none"></div>
@@ -55,56 +56,89 @@ export default function InversionesSection() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <span className="text-gold-500 text-xs font-bold uppercase tracking-[0.2em] border-b border-gold-500/30 pb-2">
+          <span className="text-gold-600 text-xs font-bold uppercase tracking-[0.2em] border-b border-gold-500/30 pb-2">
             Invertir en Venezuela es una oportunidad
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-navy-main leading-tight">
             Desarrollamos y acompañamos proyectos de inversión inmobiliaria y adquisición de Terrenos en Venezuela, con foco estratégico en la Isla de Margarita.
           </h2>
           <div className="pt-8">
              <button
                 onClick={handleCTA}
-                className="px-6 py-3 rounded-full bg-gradient-to-r from-gold-600 to-gold-400 text-black text-xs font-bold uppercase tracking-wider hover:scale-105 transition-all shadow-lg shadow-gold-500/10"
+                className="px-6 py-3 rounded-full bg-gold-500 text-white text-xs font-bold uppercase tracking-wider hover:bg-gold-600 hover:scale-105 transition-all shadow-md"
               >
                 Solicitar evaluación de inversión
               </button>
           </div>
         </div>
 
-        {/* Value Proposition Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
-          <div className="glass-panel-gold p-8 rounded-2xl border border-gold-500/10 hover:border-gold-500/30 hover:scale-[1.01] transition-all duration-300 group">
-            <h3 className="text-lg font-bold text-white mb-2 group-hover:text-gold-400 transition-colors uppercase">
-              Terrenos
-            </h3>
-            <button className="text-gold-500 text-xs font-bold uppercase mt-4">
-              Solicitar Información →
-            </button>
+        {/* Value Proposition Cards (Replaced by Image Split) */}
+        <div className="w-full flex flex-col md:flex-row h-auto md:h-[500px] rounded-3xl overflow-hidden shadow-2xl mb-20 border border-slate-200/50">
+          {/* Terrenos Block */}
+          <div 
+            className="relative w-full md:w-1/2 h-[400px] md:h-full group overflow-hidden bg-navy-main"
+            style={{ backgroundImage: "url('/terrenos-bg.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
+          >
+            {/* Elegant overlay to make it look premium and not just a raw photo */}
+            <div className="absolute inset-0 bg-navy-main/70 mix-blend-multiply transition-colors duration-700 group-hover:bg-navy-main/50"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-navy-main via-navy-main/20 to-transparent opacity-90"></div>
+            
+            {/* Content */}
+            <div className="absolute inset-0 flex flex-col justify-between items-center py-12 px-6 z-10">
+              <div className="flex-1 flex items-center justify-center">
+                <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-widest uppercase drop-shadow-lg transform transition-transform duration-700 group-hover:scale-105 text-center">
+                  Terrenos
+                </h2>
+              </div>
+              <Link 
+                href="/contacto?branch=inversiones&investmentType=terreno"
+                className="px-6 py-3 rounded-full bg-gold-500 text-white text-xs sm:text-sm font-bold shadow-lg hover:bg-gold-400 transition-all transform hover:-translate-y-1 text-center"
+              >
+                Quiero información sobre los Terrenos
+              </Link>
+            </div>
           </div>
-          <div className="glass-panel-gold p-8 rounded-2xl border border-gold-500/10 hover:border-gold-500/30 hover:scale-[1.01] transition-all duration-300 group">
-            <h3 className="text-lg font-bold text-white mb-2 group-hover:text-gold-400 transition-colors uppercase">
-              Urbanismos
-            </h3>
-            <button className="text-gold-500 text-xs font-bold uppercase mt-4">
-              Solicitar Información →
-            </button>
+
+          {/* Urbanismos Block */}
+          <div 
+            className="relative w-full md:w-1/2 h-[400px] md:h-full group overflow-hidden bg-slate-900"
+            style={{ backgroundImage: "url('/urbanismos-bg.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
+          >
+            {/* Elegant overlay */}
+            <div className="absolute inset-0 bg-slate-900/80 mix-blend-multiply transition-colors duration-700 group-hover:bg-slate-900/60"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent opacity-90"></div>
+            
+            {/* Content */}
+            <div className="absolute inset-0 flex flex-col justify-between items-center py-12 px-6 z-10">
+              <div className="flex-1 flex items-center justify-center">
+                <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-widest uppercase drop-shadow-lg transform transition-transform duration-700 group-hover:scale-105 text-center">
+                  Urbanismos
+                </h2>
+              </div>
+              <Link 
+                href="/contacto?branch=inversiones&investmentType=ambos"
+                className="px-6 py-3 rounded-full bg-white text-navy-main text-xs sm:text-sm font-bold shadow-lg hover:bg-slate-100 transition-all transform hover:-translate-y-1 text-center"
+              >
+                Quiero una evaluación de mi proyecto
+              </Link>
+            </div>
           </div>
         </div>
 
         {/* Info Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-           <div className="bg-gray-950/60 p-6 rounded-xl border border-gray-800 flex flex-col justify-between hover:border-gold-500/20 transition-all group">
-             <h4 className="text-base font-bold text-white mb-2 uppercase">¿Por qué Venezuela?</h4>
-             <button className="text-gray-400 text-xs font-bold uppercase mt-4 text-left group-hover:text-gold-500">Quiero invertir en Venezuela →</button>
-           </div>
-           <div className="bg-gray-950/60 p-6 rounded-xl border border-gray-800 flex flex-col justify-between hover:border-gold-500/20 transition-all group">
-             <h4 className="text-base font-bold text-white mb-2 uppercase">¿Por qué la Isla de Margarita?</h4>
-             <button className="text-gray-400 text-xs font-bold uppercase mt-4 text-left group-hover:text-gold-500">Evaluar terrenos y proyectos →</button>
-           </div>
-           <div className="bg-gray-950/60 p-6 rounded-xl border border-gray-800 flex flex-col justify-between hover:border-gold-500/20 transition-all group">
-             <h4 className="text-base font-bold text-white mb-2 uppercase">¿Cómo reducimos riesgos?</h4>
-             <button className="text-gray-400 text-xs font-bold uppercase mt-4 text-left group-hover:text-gold-500">Evaluar oportunidad de inversión →</button>
-           </div>
+           <Link href="/contacto?branch=inversiones&investmentType=terreno" className="bg-white p-6 rounded-xl border border-slate-200 flex flex-col justify-between hover:border-gold-500/40 hover:shadow-md hover:-translate-y-1 transition-all duration-300 group shadow-sm cursor-pointer">
+             <h4 className="text-base font-bold text-navy-main mb-2 uppercase group-hover:text-gold-600 transition-colors">¿Por qué Venezuela?</h4>
+             <span className="text-slate-500 text-xs font-bold uppercase mt-4 text-left group-hover:text-navy-main transition-colors block">Quiero invertir en Venezuela →</span>
+           </Link>
+           <Link href="/contacto?branch=inversiones&investmentType=terreno" className="bg-white p-6 rounded-xl border border-slate-200 flex flex-col justify-between hover:border-gold-500/40 hover:shadow-md hover:-translate-y-1 transition-all duration-300 group shadow-sm cursor-pointer">
+             <h4 className="text-base font-bold text-navy-main mb-2 uppercase group-hover:text-gold-600 transition-colors">¿Por qué la Isla de Margarita?</h4>
+             <span className="text-slate-500 text-xs font-bold uppercase mt-4 text-left group-hover:text-navy-main transition-colors block">Evaluar terrenos y proyectos →</span>
+           </Link>
+           <Link href="/contacto?branch=inversiones&investmentType=terreno" className="bg-white p-6 rounded-xl border border-slate-200 flex flex-col justify-between hover:border-gold-500/40 hover:shadow-md hover:-translate-y-1 transition-all duration-300 group shadow-sm cursor-pointer">
+             <h4 className="text-base font-bold text-navy-main mb-2 uppercase group-hover:text-gold-600 transition-colors">¿Cómo reducimos riesgos?</h4>
+             <span className="text-slate-500 text-xs font-bold uppercase mt-4 text-left group-hover:text-navy-main transition-colors block">Evaluar oportunidad de inversión →</span>
+           </Link>
         </div>
 
       </div>

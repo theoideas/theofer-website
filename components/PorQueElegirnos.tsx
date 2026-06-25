@@ -28,21 +28,21 @@ export default function PorQueElegirnos() {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden bg-gray-950 border-t border-gray-900">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(197,137,27,0.03),transparent_70%)]"></div>
+    <section className="py-24 relative overflow-hidden bg-slate-50 border-t border-slate-100">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(200,138,34,0.03),transparent_70%)]"></div>
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         <div className="flex flex-col lg:flex-row items-center gap-16">
           {/* Left Content */}
           <div className="lg:w-1/2 space-y-6">
-            <span className="text-cyber-teal text-xs font-bold uppercase tracking-[0.2em] border-b border-cyber-teal/30 pb-2">
+            <span className="text-navy-main text-xs font-bold uppercase tracking-[0.2em] border-b border-navy-main/30 pb-2">
               Te Ofrecemos
             </span>
-            <p className="text-gray-400 text-sm sm:text-base leading-relaxed font-light mt-4">
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-light mt-4">
               La ingeniería y arquitectura son los pilares más críticos de cualquier proyecto. Un diseño inadecuado no solo genera fallas técnicas, sino también sobrecostos, riesgos operativos y problemas legales.
             </p>
-            <p className="text-gray-400 text-sm sm:text-base leading-relaxed font-light">
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-light">
               En Theofer desarrollamos soluciones estructurales, eléctricas y espaciales seguras, eficientes y adaptadas al entorno, siempre bajo criterios normativos actualizados. Nuestro enfoque busca garantizar estabilidad, funcionalidad y viabilidad real.
             </p>
           </div>
@@ -54,15 +54,15 @@ export default function PorQueElegirnos() {
               return (
                 <div 
                   key={idx}
-                  className="bg-gray-900/40 border border-gray-800 p-6 rounded-2xl hover:bg-gray-900 hover:border-gold-500/30 transition-all duration-300 group"
+                  className="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm hover:bg-slate-50 hover:border-gold-500/40 transition-all duration-300 group"
                 >
-                  <div className="p-3 bg-black/40 rounded-xl border border-gray-800 text-gold-400 w-fit mb-4 group-hover:bg-gold-500/10 transition-colors">
+                  <div className="p-3 bg-slate-100 rounded-xl border border-slate-200 text-gold-600 w-fit mb-4 group-hover:bg-gold-500/10 transition-colors">
                     <Icon size={24} />
                   </div>
-                  <h3 className="text-base font-bold text-white mb-2 group-hover:text-gold-400 transition-colors">
+                  <h3 className="text-base font-bold text-navy-main mb-2 group-hover:text-gold-600 transition-colors">
                     {feature.title}
                   </h3>
-                  <p className="text-xs text-gray-400 leading-relaxed">
+                  <p className="text-xs text-slate-500 leading-relaxed">
                     {feature.desc}
                   </p>
                 </div>
