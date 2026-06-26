@@ -128,16 +128,63 @@ export default function InversionesSection() {
         {/* Info Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
            <Link href="/contacto?branch=inversiones&investmentType=terreno" className="bg-white p-6 rounded-xl border border-slate-200 flex flex-col justify-between hover:border-gold-500/40 hover:shadow-md hover:-translate-y-1 transition-all duration-300 group shadow-sm cursor-pointer">
-             <h4 className="text-base font-bold text-navy-main mb-2 uppercase group-hover:text-gold-600 transition-colors">¿Por qué Venezuela?</h4>
-             <span className="text-slate-500 text-xs font-bold uppercase mt-4 text-left group-hover:text-navy-main transition-colors block">Quiero invertir en Venezuela →</span>
+             <h4 className="text-base font-bold text-navy-main mb-4 uppercase group-hover:text-gold-600 transition-colors">¿Por qué Venezuela?</h4>
+             <div className="text-sm text-slate-600 font-light space-y-4 mb-6">
+               <div className="bg-gold-500/10 border border-gold-500/20 p-3 rounded-lg">
+                 <p className="font-bold text-navy-main text-xs sm:text-sm">Un mercado con alto potencial y baja competencia.</p>
+               </div>
+               <div>
+                 <p className="mb-3 font-semibold text-slate-700">Venezuela atraviesa una etapa única:</p>
+                 <ul className="space-y-2 text-xs sm:text-sm">
+                   <li className="flex items-start gap-2"><CheckCircle size={14} className="text-gold-500 mt-0.5 shrink-0" /><span>Precios inmobiliarios altamente competitivos</span></li>
+                   <li className="flex items-start gap-2"><CheckCircle size={14} className="text-gold-500 mt-0.5 shrink-0" /><span>Amplias oportunidades de revalorización</span></li>
+                   <li className="flex items-start gap-2"><CheckCircle size={14} className="text-gold-500 mt-0.5 shrink-0" /><span>Espacios estratégicos aún sin explotar</span></li>
+                   <li className="flex items-start gap-2"><CheckCircle size={14} className="text-gold-500 mt-0.5 shrink-0" /><span>Interés creciente de inversión privada</span></li>
+                 </ul>
+               </div>
+               <p className="font-bold text-navy-main border-l-2 border-gold-500 pl-3">Para quienes saben analizar riesgos y oportunidades, el momento es ahora.</p>
+             </div>
+             <span className="text-slate-500 text-xs font-bold uppercase mt-auto text-left group-hover:text-navy-main transition-colors block">Quiero invertir en Venezuela →</span>
            </Link>
            <Link href="/contacto?branch=inversiones&investmentType=terreno" className="bg-white p-6 rounded-xl border border-slate-200 flex flex-col justify-between hover:border-gold-500/40 hover:shadow-md hover:-translate-y-1 transition-all duration-300 group shadow-sm cursor-pointer">
-             <h4 className="text-base font-bold text-navy-main mb-2 uppercase group-hover:text-gold-600 transition-colors">¿Por qué la Isla de Margarita?</h4>
-             <span className="text-slate-500 text-xs font-bold uppercase mt-4 text-left group-hover:text-navy-main transition-colors block">Evaluar terrenos y proyectos →</span>
+             <h4 className="text-base font-bold text-navy-main mb-4 uppercase group-hover:text-gold-600 transition-colors">¿Por qué la Isla de Margarita?</h4>
+             <div className="text-sm text-slate-600 font-light space-y-4 mb-6">
+               <div className="bg-gold-500/10 border border-gold-500/20 p-3 rounded-lg">
+                 <p className="font-bold text-navy-main text-xs sm:text-sm">Isla de Margarita: ubicación, turismo y proyección</p>
+               </div>
+               <div>
+                 <p className="mb-3 font-semibold text-slate-700">La Isla de Margarita destaca por:</p>
+                 <ul className="space-y-2 text-xs sm:text-sm">
+                   <li className="flex items-start gap-2"><CheckCircle size={14} className="text-gold-500 mt-0.5 shrink-0" /><span>Ubicación estratégica en el Caribe</span></li>
+                   <li className="flex items-start gap-2"><CheckCircle size={14} className="text-gold-500 mt-0.5 shrink-0" /><span>Potencial turístico continuo</span></li>
+                   <li className="flex items-start gap-2"><CheckCircle size={14} className="text-gold-500 mt-0.5 shrink-0" /><span>Terrenos con alto margen de crecimiento</span></li>
+                   <li className="flex items-start gap-2"><CheckCircle size={14} className="text-gold-500 mt-0.5 shrink-0" /><span>Demanda futura en proyectos residenciales y comerciales</span></li>
+                   <li className="flex items-start gap-2"><CheckCircle size={14} className="text-gold-500 mt-0.5 shrink-0" /><span>Clima, conectividad y atractivo internacional</span></li>
+                 </ul>
+               </div>
+               <p className="font-bold text-navy-main border-l-2 border-gold-500 pl-3">No es solo un destino turístico.<br/>Es un activo con visión de largo plazo.</p>
+             </div>
+             <span className="text-slate-500 text-xs font-bold uppercase mt-auto text-left group-hover:text-navy-main transition-colors block">Evaluar terrenos y proyectos →</span>
            </Link>
            <Link href="/contacto?branch=inversiones&investmentType=terreno" className="bg-white p-6 rounded-xl border border-slate-200 flex flex-col justify-between hover:border-gold-500/40 hover:shadow-md hover:-translate-y-1 transition-all duration-300 group shadow-sm cursor-pointer">
-             <h4 className="text-base font-bold text-navy-main mb-2 uppercase group-hover:text-gold-600 transition-colors">¿Cómo reducimos riesgos?</h4>
-             <span className="text-slate-500 text-xs font-bold uppercase mt-4 text-left group-hover:text-navy-main transition-colors block">Evaluar oportunidad de inversión →</span>
+             <h4 className="text-base font-bold text-navy-main mb-4 uppercase group-hover:text-gold-600 transition-colors">¿Cómo reducimos riesgos?</h4>
+             <div className="text-sm text-slate-600 font-light space-y-4 mb-6">
+               <div className="bg-gold-500/10 border border-gold-500/20 p-3 rounded-lg">
+                 <p className="font-bold text-navy-main text-xs sm:text-sm">Invertir acompañado marca la diferencia</p>
+               </div>
+               <div>
+                 <p className="mb-3 font-semibold text-slate-700">Nuestro enfoque elimina los principales miedos del inversionista:</p>
+                 <ul className="space-y-2 text-xs sm:text-sm">
+                   <li className="flex items-start gap-2"><CheckCircle size={14} className="text-gold-500 mt-0.5 shrink-0" /><span>Evaluación técnica del terreno o inmueble</span></li>
+                   <li className="flex items-start gap-2"><CheckCircle size={14} className="text-gold-500 mt-0.5 shrink-0" /><span>Análisis de viabilidad</span></li>
+                   <li className="flex items-start gap-2"><CheckCircle size={14} className="text-gold-500 mt-0.5 shrink-0" /><span>Asesoría legal y normativa</span></li>
+                   <li className="flex items-start gap-2"><CheckCircle size={14} className="text-gold-500 mt-0.5 shrink-0" /><span>Proyectos escalables</span></li>
+                   <li className="flex items-start gap-2"><CheckCircle size={14} className="text-gold-500 mt-0.5 shrink-0" /><span>Acompañamiento profesional en cada fase</span></li>
+                 </ul>
+               </div>
+               <p className="font-bold text-navy-main border-l-2 border-gold-500 pl-3">Invertir sin información es un riesgo.<br/>Invertir con respaldo técnico es una decisión.</p>
+             </div>
+             <span className="text-slate-500 text-xs font-bold uppercase mt-auto text-left group-hover:text-navy-main transition-colors block">Evaluar oportunidad de inversión →</span>
            </Link>
         </div>
 

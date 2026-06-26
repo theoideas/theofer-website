@@ -97,7 +97,7 @@ function ContactFormInner() {
                 Hablemos de tu Próximo Proyecto
               </h2>
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-light">
-                Ya sea que necesites la memoria de cálculo para un edificio en Florida, los renders de tu desarrollo comercial, o estés buscando un terreno con financiamiento en la Isla de Margarita, estamos aquí para asesorarte.
+                Ya sea que necesites la memoria de cálculo para tu construcción a nivel internacional, los renders de tu desarrollo comercial, o estés buscando un terreno con financiamiento en la Isla de Margarita, estamos aquí para asesorarte. Todos nuestros proyectos se sujetan a las leyes y normativas del país donde se ejecuten.
               </p>
             </div>
 
