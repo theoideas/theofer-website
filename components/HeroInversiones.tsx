@@ -12,6 +12,8 @@ export default function HeroInversiones() {
       <img 
         src="/hero-inversiones.jpg" 
         alt="Inversiones TheoFer"
+        fetchPriority="high"
+        decoding="sync"
         className="absolute inset-0 w-full h-full object-cover z-0 opacity-80"
       />
       

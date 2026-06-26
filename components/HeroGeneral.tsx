@@ -14,6 +14,7 @@ export default function HeroGeneral() {
         loop 
         muted 
         playsInline 
+        preload="auto"
         className="absolute inset-0 w-full h-full object-cover z-0 opacity-80"
       >
         <source src="/video-home-1.webm" type="video/webm" />

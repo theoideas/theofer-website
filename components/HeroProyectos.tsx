@@ -12,6 +12,8 @@ export default function HeroProyectos() {
       <img 
         src="/hero-proyectos.jpg" 
         alt="Proyectos TheoFer"
+        fetchPriority="high"
+        decoding="sync"
         className="absolute inset-0 w-full h-full object-cover z-0 opacity-80"
       />
       
