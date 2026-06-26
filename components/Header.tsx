@@ -33,17 +33,17 @@ export default function Header() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white py-5 border-b border-gray-100 shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white py-2.5 border-b border-gray-100 shadow-sm">
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center relative z-50">
         {/* Logo */}
-        <Link href="/" className="flex flex-col cursor-pointer group">
-          <div className="flex items-center gap-2">
-            <span className="text-2xl font-bold tracking-wider text-slate-900 group-hover:text-gold-500 transition-colors">
-              THEO<span className="text-gold-500">FER</span>
-            </span>
-          </div>
-          <span className="text-[9px] tracking-[0.25em] text-slate-500 uppercase font-semibold">
-            Inversiones & Proyectos
+        <Link href="/" className="flex items-center gap-2 md:gap-3 cursor-pointer hover:opacity-80 transition-opacity">
+          <img 
+            src="/logo-theofer-negro.svg" 
+            alt="THEOFER" 
+            className="h-[65px] md:h-[94px] w-auto shrink-0"
+          />
+          <span className="text-[10px] md:text-[11px] tracking-[0.15em] md:tracking-[0.25em] text-slate-500 uppercase font-bold pt-1 leading-tight">
+            Inversiones &<br />Proyectos
           </span>
         </Link>
 
