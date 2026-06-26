@@ -73,7 +73,7 @@ function ContactFormInner() {
 
     // Redirigir a WhatsApp
     const encodedMsg = encodeURIComponent(whatsappMessage);
-    const whatsappUrl = `https://wa.me/584248888888?text=${encodedMsg}`;
+    const whatsappUrl = `https://wa.me/584248153833?text=${encodedMsg}`;
     
     setTimeout(() => {
       window.open(whatsappUrl, "_blank");
@@ -109,7 +109,7 @@ function ContactFormInner() {
                 </div>
                 <div>
                   <h4 className="text-xs text-slate-500 font-bold uppercase tracking-wider">Atención Telefónica</h4>
-                  <p className="text-sm font-semibold text-navy-main">+58 424 888 8888</p>
+                  <p className="text-sm font-semibold text-navy-main">+58 424-8153833</p>
                 </div>
               </div>
 
@@ -120,7 +120,7 @@ function ContactFormInner() {
                 </div>
                 <div>
                   <h4 className="text-xs text-slate-500 font-bold uppercase tracking-wider">Correo Electrónico</h4>
-                  <p className="text-sm font-semibold text-navy-main">contacto@theofer.com</p>
+                  <p className="text-sm font-semibold text-navy-main">info@theofer.com</p>
                 </div>
               </div>
 
