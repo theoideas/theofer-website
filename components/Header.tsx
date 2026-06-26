@@ -43,7 +43,7 @@ export default function Header() {
             </span>
           </div>
           <span className="text-[9px] tracking-[0.25em] text-slate-500 uppercase font-semibold">
-            Ingeniería & Inversiones
+            Inversiones & Proyectos
           </span>
         </Link>
 
@@ -125,10 +125,10 @@ export default function Header() {
             <Link
               href="/contacto"
               onClick={() => setIsOpen(false)}
-              className="w-full py-3 rounded-xl text-center text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2 bg-gold-500 text-white hover:bg-gold-600"
+              className="w-full py-3 px-2 rounded-xl text-center text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2 bg-gold-500 text-white hover:bg-gold-600"
             >
-              <PhoneCall size={16} />
-              Hablemos sobre tu proyecto
+              <PhoneCall size={16} className="shrink-0" />
+              <span>Hablemos sobre tu proyecto</span>
             </Link>
           </div>
         </div>

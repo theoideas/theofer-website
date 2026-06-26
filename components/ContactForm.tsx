@@ -9,14 +9,16 @@ function ContactFormInner() {
   const branchParam = searchParams?.get("branch");
   const investmentTypeParam = searchParams?.get("investmentType");
   const loteParam = searchParams?.get("lote");
+  const projectTypeParam = searchParams?.get("projectType");
+  const messageParam = searchParams?.get("message");
 
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     branch: branchParam === "proyectos" ? "proyectos" : "inversiones",
-    projectType: "estructural",
+    projectType: ["estructural", "electricidad", "hidraulica", "3d"].includes(projectTypeParam || "") ? projectTypeParam! : "estructural",
     investmentType: ["terreno", "construccion", "ambos"].includes(investmentTypeParam || "") ? investmentTypeParam! : "terreno",
-    message: loteParam ? `Hola, estoy muy interesado en reservar el ${loteParam}. Me gustaría recibir más información.` : ""
+    message: messageParam ? messageParam : (loteParam ? `Hola, estoy muy interesado en reservar el ${loteParam}. Me gustaría recibir más información.` : "")
   });
 
   // Escuchar cambios en la URL (si el usuario hace clic en los botones de Categorias sin recargar la página)
@@ -27,10 +29,15 @@ function ContactFormInner() {
     if (investmentTypeParam && ["terreno", "construccion", "ambos"].includes(investmentTypeParam)) {
       setFormData(prev => ({ ...prev, investmentType: investmentTypeParam }));
     }
-    if (loteParam) {
+    if (projectTypeParam && ["estructural", "electricidad", "hidraulica", "3d"].includes(projectTypeParam)) {
+      setFormData(prev => ({ ...prev, projectType: projectTypeParam }));
+    }
+    if (messageParam) {
+      setFormData(prev => ({ ...prev, message: messageParam }));
+    } else if (loteParam) {
       setFormData(prev => ({ ...prev, message: `Hola, estoy muy interesado en reservar el ${loteParam}. Me gustaría recibir más información.` }));
     }
-  }, [branchParam, investmentTypeParam, loteParam]);
+  }, [branchParam, investmentTypeParam, projectTypeParam, loteParam, messageParam]);
 
   const [submitted, setSubmitted] = useState(false);
 
@@ -260,10 +267,10 @@ function ContactFormInner() {
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className="w-full py-4 rounded-xl bg-gold-500 hover:bg-gold-600 text-white text-xs font-extrabold uppercase tracking-widest shadow-md transition-all duration-300 flex items-center justify-center gap-2 transform hover:-translate-y-0.5"
+                    className="w-full py-4 px-2 rounded-xl bg-gold-500 hover:bg-gold-600 text-white text-xs font-extrabold uppercase tracking-widest shadow-md transition-all duration-300 flex items-center justify-center gap-2 transform hover:-translate-y-0.5"
                   >
-                    Enviar y Conectar a WhatsApp
-                    <Send size={14} />
+                    <span>Enviar y Conectar a WhatsApp</span>
+                    <Send size={14} className="shrink-0" />
                   </button>
                 </form>
               )}

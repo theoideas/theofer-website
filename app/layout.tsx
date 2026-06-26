@@ -35,6 +35,9 @@ export const metadata: Metadata = {
     siteName: "THEOFER",
     locale: "es_VE",
     type: "website",
+  },
+  icons: {
+    icon: "/favicon.png?v=3",
   }
 };
 

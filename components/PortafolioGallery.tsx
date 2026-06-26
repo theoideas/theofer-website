@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { FolderGit2, Check, FileCheck, Compass, Eye, Filter, ArrowRight } from "lucide-react";
 
 export default function PortafolioGallery() {
@@ -34,7 +35,7 @@ export default function PortafolioGallery() {
       location: "Venezuela",
       details: "Diseño estructural y modelado para townhouses. Planos detallados de fundaciones y losas.",
       badge: "Ingeniería Civil",
-      visualBg: "from-navy-main/40 to-slate-400/40",
+      visualBg: "from-navy-main/60 to-slate-800/60",
       image: "/portfolio/TH_PL_EST_REV2-01.jpg"
     },
     {
@@ -43,7 +44,7 @@ export default function PortafolioGallery() {
       location: "Venezuela",
       details: "Ingeniería de planta fotovoltaica. Esquemas de paneles, cableado e inversores para energía limpia.",
       badge: "Energía Solar",
-      visualBg: "from-gold-500/40 to-gold-400/40",
+      visualBg: "from-gold-500/50 to-gold-400/50",
       image: "/portfolio/Proyecto-Fotovoltaico-lam-01.jpg"
     },
     {
@@ -52,7 +53,7 @@ export default function PortafolioGallery() {
       location: "Cabrero",
       details: "Diseño detallado de la red de agua potable e isométricos para el proyecto residencial Cabrero.",
       badge: "Hidráulica",
-      visualBg: "from-cyan-600/40 to-slate-400/40",
+      visualBg: "from-navy-main/60 to-slate-800/60",
       image: "/portfolio/CASA-CABRERO-AGUA-POTABLE-AB-1.jpg"
     },
     {
@@ -61,7 +62,7 @@ export default function PortafolioGallery() {
       location: "Cabrero",
       details: "Ingeniería y diseño de la red de recolección de aguas servidas e instalaciones sanitarias.",
       badge: "Sanitaria",
-      visualBg: "from-sky-600/40 to-slate-400/40",
+      visualBg: "from-gold-500/50 to-gold-400/50",
       image: "/portfolio/Casa-CABRERO-ALCANTARILLADO-AN-01.jpg"
     },
     {
@@ -70,7 +71,7 @@ export default function PortafolioGallery() {
       location: "Venezuela",
       details: "Detalles constructivos, despiece de acero y especificaciones de pórticos principales.",
       badge: "Estructuras",
-      visualBg: "from-indigo-600/40 to-slate-400/40",
+      visualBg: "from-navy-main/60 to-slate-800/60",
       image: "/portfolio/TH_PL_EST_REV2-03.jpg"
     },
     {
@@ -79,7 +80,7 @@ export default function PortafolioGallery() {
       location: "Venezuela",
       details: "Diagramas unifilares y especificaciones de tableros eléctricos para instalación de sistemas solares.",
       badge: "Diseño Eléctrico",
-      visualBg: "from-emerald-600/40 to-slate-400/40",
+      visualBg: "from-gold-500/50 to-gold-400/50",
       image: "/portfolio/Proyecto-Fotovoltaico-lam-02.jpg"
     }
   ];
@@ -130,9 +131,10 @@ export default function PortafolioGallery() {
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((proj, idx) => (
-            <div
+            <Link
+              href={`/contacto?branch=proyectos&projectType=${proj.category === 'energia' ? 'electricidad' : proj.category}&message=${encodeURIComponent(`Hola, estoy interesado en un proyecto similar a: ${proj.title}. Me gustaría recibir más información.`)}`}
               key={idx}
-              className="bg-white border border-slate-200 rounded-2xl overflow-hidden hover:scale-[1.01] hover:border-slate-300 hover:shadow-lg hover:shadow-slate-200/50 transition-all duration-300 flex flex-col justify-between group shadow-sm"
+              className="bg-white border border-slate-200 rounded-2xl overflow-hidden hover:scale-[1.01] hover:border-slate-300 hover:shadow-lg hover:shadow-slate-200/50 transition-all duration-300 flex flex-col justify-between group shadow-sm block cursor-pointer"
             >
               {/* Visual Card Top (Schematic Representation) */}
               <div className="h-48 relative overflow-hidden bg-slate-100 flex items-center justify-center p-6 border-b border-slate-100">
@@ -215,9 +217,12 @@ export default function PortafolioGallery() {
                     <FileCheck size={12} className="text-gold-500" />
                     Ingeniería Certificada
                   </span>
+                  <span className="text-gold-600 font-bold uppercase flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                    Cotizar <ArrowRight size={14} />
+                  </span>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
