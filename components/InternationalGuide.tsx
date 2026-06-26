@@ -27,10 +27,7 @@ export default function InternationalGuide() {
       desc: "Facilitamos transacciones seguras para que adquieras tus lotes o realices los pagos mensuales de construcción. Soportamos diversos canales financieros regulados para agilizar la entrada de capital de manera clara y auditable.",
       badge: "Múltiples Opciones",
       bulletPoints: [
-        "Transferencias bancarias internacionales (Wire / ACH).",
-        "Pagos directos por Zelle (para reservas y cuotas iniciales).",
-        "Pagos en Criptomonedas estables (USDT / USDC) para mayor velocidad.",
-        "Contratos de escrow o fideicomisos según montos."
+        "Pagos internacionales seguros a través de PayPal."
       ]
     },
     {
