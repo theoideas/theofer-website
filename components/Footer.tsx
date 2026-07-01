@@ -26,13 +26,14 @@ export default function Footer() {
             <h4 className="text-xs font-bold text-white uppercase tracking-widest mt-6">Contacto Directo</h4>
             <ul className="space-y-3 text-xs text-slate-400">
               <li className="flex items-center gap-3 hover:text-gold-400 transition-colors cursor-pointer">
-                <Phone size={14} className="text-gold-500" /> +58 424-8153833
+                <Phone size={14} className="text-gold-500 shrink-0" /> 
+                <span className="leading-tight">+58 414-7952042<br/>+34 666-877316</span>
               </li>
               <li className="flex items-center gap-3 hover:text-gold-400 transition-colors cursor-pointer">
-                <Mail size={14} className="text-gold-500" /> info@theofer.com
+                <Mail size={14} className="text-gold-500 shrink-0" /> info@theofer.com
               </li>
               <li className="flex items-start gap-3 hover:text-gold-400 transition-colors cursor-pointer">
-                <MapPin size={14} className="text-gold-500 mt-0.5 shrink-0" /> Pampatar, Isla de Margarita, Venezuela
+                <MapPin size={14} className="text-gold-500 mt-0.5 shrink-0" /> Taguantar, Municipio Díaz, Nueva Esparta, Venezuela
               </li>
             </ul>
           </div>

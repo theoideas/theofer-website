@@ -73,7 +73,7 @@ function ContactFormInner() {
 
     // Redirigir a WhatsApp
     const encodedMsg = encodeURIComponent(whatsappMessage);
-    const whatsappUrl = `https://wa.me/584248153833?text=${encodedMsg}`;
+    const whatsappUrl = `https://wa.me/584147952042?text=${encodedMsg}`;
     
     setTimeout(() => {
       window.open(whatsappUrl, "_blank");
@@ -109,7 +109,7 @@ function ContactFormInner() {
                 </div>
                 <div>
                   <h4 className="text-xs text-slate-500 font-bold uppercase tracking-wider">Atención Telefónica</h4>
-                  <p className="text-sm font-semibold text-navy-main">+58 424-8153833</p>
+                  <p className="text-sm font-semibold text-navy-main leading-tight">+58 414-7952042<br />+34 666-877316</p>
                 </div>
               </div>
 
@@ -131,7 +131,7 @@ function ContactFormInner() {
                 </div>
                 <div>
                   <h4 className="text-xs text-slate-500 font-bold uppercase tracking-wider">Oficina Física</h4>
-                  <p className="text-sm font-semibold text-navy-main">Pampatar, Isla de Margarita, Venezuela</p>
+                  <p className="text-sm font-semibold text-navy-main">Taguantar, Municipio Díaz, Nueva Esparta, Venezuela</p>
                 </div>
               </div>
             </div>
