@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { createClient } from "@supabase/supabase-js";
 import { supabase } from "@/lib/supabase";
 import { Resend } from "resend";
 
@@ -22,8 +23,13 @@ export async function GET(req: Request) {
     startDate.setMonth(startDate.getMonth() - 1);
   }
 
+  // Usamos la llave maestra (Service Role) para saltarnos el RLS y poder leer los datos
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+  const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+  const supabaseAdmin = createClient(supabaseUrl, supabaseServiceKey);
+
   try {
-    const { data: leads, error } = await supabase
+    const { data: leads, error } = await supabaseAdmin
       .from("leads")
       .select("*")
       .gte("fecha_creacion", startDate.toISOString());
