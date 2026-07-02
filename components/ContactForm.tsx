@@ -46,7 +46,7 @@ function ContactFormInner() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
 
@@ -69,11 +69,31 @@ function ContactFormInner() {
       detailMsg = `Línea: TheoFer Inversiones (Margarita)\nInterés: ${iTypes[formData.investmentType] || formData.investmentType}`;
     }
 
+    // Call internal backend API
+    const utmSource = sessionStorage.getItem("utm_source");
+    const utmMedium = sessionStorage.getItem("utm_medium");
+    const utmCampaign = sessionStorage.getItem("utm_campaign");
+
+    try {
+      await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...formData,
+          utmSource,
+          utmMedium,
+          utmCampaign
+        }),
+      });
+    } catch (error) {
+      console.error("Failed to send lead to backend", error);
+    }
+
     const whatsappMessage = `Hola TheoFer,\n\nMi nombre es *${formData.name}*.\nEstoy interesado en sus servicios.\n\n*Detalles del contacto:*\n- Correo: ${formData.email}\n- ${detailMsg}\n\n*Mensaje:*\n"${formData.message}"\n\nQuedo atento a su asesoría. ¡Gracias!`;
 
     // Redirigir a WhatsApp
     const encodedMsg = encodeURIComponent(whatsappMessage);
-    const whatsappUrl = `https://wa.me/584147952042?text=${encodedMsg}`;
+    const whatsappUrl = `https://wa.me/584121821067?text=${encodedMsg}`;
     
     setTimeout(() => {
       window.open(whatsappUrl, "_blank");

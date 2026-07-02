@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { Compass, Landmark, ShieldCheck, Mail, Phone, MapPin, ArrowUp } from "lucide-react";
+import { Facebook, Instagram } from "./SocialIcons";
 
 export default function Footer() {
   const handleScrollToTop = () => {
@@ -96,6 +97,14 @@ export default function Footer() {
             <span className="hover:text-gold-400 transition-colors cursor-pointer">
               Términos y Condiciones
             </span>
+            <div className="flex items-center gap-4 border-l border-slate-accent/30 pl-6 ml-2">
+              <a href="https://www.facebook.com/Theoferinversiones" target="_blank" rel="noopener noreferrer" className="hover:text-gold-400 transition-colors">
+                <Facebook size={16} />
+              </a>
+              <a href="https://www.instagram.com/theoferllc/" target="_blank" rel="noopener noreferrer" className="hover:text-gold-400 transition-colors">
+                <Instagram size={16} />
+              </a>
+            </div>
           </div>
 
           <button

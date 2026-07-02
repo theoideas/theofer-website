@@ -3,7 +3,8 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Landmark, Compass, FileText, PhoneCall } from "lucide-react";
+import { Menu, X, PhoneCall } from "lucide-react";
+import { Facebook, Instagram } from "./SocialIcons";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -66,7 +67,15 @@ export default function Header() {
           </div>
         </div>
 
-        <div className="hidden md:flex items-center">
+        <div className="hidden md:flex items-center gap-4">
+          <div className="flex items-center gap-3 text-slate-400 mr-2">
+            <a href="https://www.facebook.com/Theoferinversiones" target="_blank" rel="noopener noreferrer" className="hover:text-gold-500 transition-colors">
+              <Facebook size={18} />
+            </a>
+            <a href="https://www.instagram.com/theoferllc/" target="_blank" rel="noopener noreferrer" className="hover:text-gold-500 transition-colors">
+              <Instagram size={18} />
+            </a>
+          </div>
           <Link
             href="/contacto"
             className="px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 transform hover:-translate-y-0.5 shadow-md flex items-center gap-2 bg-gold-500 text-white hover:bg-gold-600"
@@ -121,7 +130,7 @@ export default function Header() {
           </div>
 
           {/* Call CTA in Drawer */}
-          <div className="mt-8">
+          <div className="mt-8 space-y-6">
             <Link
               href="/contacto"
               onClick={() => setIsOpen(false)}
@@ -130,6 +139,15 @@ export default function Header() {
               <PhoneCall size={16} className="shrink-0" />
               <span>Hablemos sobre tu proyecto</span>
             </Link>
+
+            <div className="pt-6 border-t border-gray-100 flex justify-center gap-6">
+              <a href="https://www.facebook.com/Theoferinversiones" target="_blank" rel="noopener noreferrer" className="p-3 bg-slate-50 text-slate-500 rounded-full hover:bg-gold-50 hover:text-gold-600 transition-colors">
+                <Facebook size={24} />
+              </a>
+              <a href="https://www.instagram.com/theoferllc/" target="_blank" rel="noopener noreferrer" className="p-3 bg-slate-50 text-slate-500 rounded-full hover:bg-gold-50 hover:text-gold-600 transition-colors">
+                <Instagram size={24} />
+              </a>
+            </div>
           </div>
         </div>
       </div>
