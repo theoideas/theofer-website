@@ -355,7 +355,7 @@ const lotesData = [
   {
     "id": "1782395927267",
     "name": "Lote II-04",
-    "status": "disponible",
+    "status": "vendido",
     "points": [
       {
         "x": 48.53026476223654,
@@ -1010,7 +1010,7 @@ export default function InteractiveMasterPlan() {
 
   return (
     <div className="w-full flex flex-col relative bg-white border border-slate-200 shadow-xl rounded-2xl overflow-hidden">
-      
+
       <div className="flex flex-wrap items-center justify-between p-4 bg-navy-main border-b border-navy-800">
         <h3 className="text-white font-bold tracking-widest uppercase text-sm">
           Master Plan <span className="text-gold-500">Taguantar</span>
@@ -1032,25 +1032,25 @@ export default function InteractiveMasterPlan() {
       </div>
 
       <div ref={containerRef} className="relative w-full bg-slate-900 overflow-hidden group">
-        
-        <motion.div 
+
+        <motion.div
           className="w-full h-full"
           style={{ scale: selectedLot ? 1 : scrollScale }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
-          <div 
+          <div
             className="relative w-full transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]"
             style={transformStyle}
           >
-            <img 
-              src="/lotes-master.jpg" 
-              alt="Plano Master" 
+            <img
+              src="/lotes-master.jpg"
+              alt="Plano Master"
               className="w-full h-auto block"
             />
 
             <div className="absolute inset-0 bg-navy-main/20 pointer-events-none mix-blend-multiply"></div>
 
-            <svg 
+            <svg
               viewBox="0 0 100 100"
               className="absolute inset-0 w-full h-full z-10"
               preserveAspectRatio="none"
@@ -1059,7 +1059,7 @@ export default function InteractiveMasterPlan() {
                 const isHovered = hoveredLot === lot.id;
                 const isSelected = selectedLot === lot.id;
                 const isVendido = lot.status === "vendido";
-                
+
                 const pointsStr = lot.points.map(p => `${p.x},${p.y}`).join(" ");
 
                 return (
@@ -1068,20 +1068,20 @@ export default function InteractiveMasterPlan() {
                     points={pointsStr}
                     vectorEffect="non-scaling-stroke"
                     fill={
-                      isVendido 
-                        ? "rgba(15, 23, 42, 0.7)" 
+                      isVendido
+                        ? "rgba(15, 23, 42, 0.7)"
                         : isSelected
-                          ? "rgba(200, 138, 34, 0.6)" 
-                          : isHovered 
-                            ? "rgba(200, 138, 34, 0.4)" 
-                            : "rgba(255, 255, 255, 0.05)" 
+                          ? "rgba(200, 138, 34, 0.6)"
+                          : isHovered
+                            ? "rgba(200, 138, 34, 0.4)"
+                            : "rgba(255, 255, 255, 0.05)"
                     }
                     stroke={
-                      isVendido 
-                        ? "rgba(255, 255, 255, 0.1)" 
-                        : isSelected || isHovered 
-                          ? "#C88A22" 
-                          : "rgba(255, 255, 255, 0.4)" 
+                      isVendido
+                        ? "rgba(255, 255, 255, 0.1)"
+                        : isSelected || isHovered
+                          ? "#C88A22"
+                          : "rgba(255, 255, 255, 0.4)"
                     }
                     strokeWidth={isSelected || isHovered ? "2" : "1"}
                     className={`transition-all duration-300 ${isVendido ? 'cursor-not-allowed' : 'cursor-pointer'}`}
@@ -1101,7 +1101,7 @@ export default function InteractiveMasterPlan() {
 
         {/* Reset Zoom Button */}
         {selectedLot && (
-          <button 
+          <button
             onClick={() => setSelectedLot(null)}
             className="absolute bottom-4 md:bottom-auto md:top-4 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-4 z-30 bg-navy-main text-white px-4 py-2 md:px-5 md:py-2.5 rounded-full flex items-center gap-2 text-[10px] md:text-xs font-bold uppercase tracking-widest shadow-2xl hover:bg-slate-800 transition-colors border border-slate-700 animate-in fade-in zoom-in-95"
           >
@@ -1115,12 +1115,12 @@ export default function InteractiveMasterPlan() {
             {lotesData
               .filter((l) => l.id === (hoveredLot || selectedLot))
               .map((lot) => (
-                <div 
-                  key={lot.id} 
+                <div
+                  key={lot.id}
                   className="bg-white/95 backdrop-blur-md px-4 py-3 md:px-6 md:py-4 rounded-xl shadow-2xl border border-slate-100 flex flex-col items-start gap-1.5 md:gap-2 transform transition-all duration-300 animate-in fade-in zoom-in-95"
                 >
                   <span className="text-navy-main font-extrabold text-lg md:text-xl tracking-wider">{lot.name}</span>
-                  
+
                   {lot.status === "disponible" ? (
                     <div className="flex items-center gap-1.5 text-emerald-600 font-bold text-[10px] md:text-xs uppercase tracking-widest bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-100">
                       <CheckCircle2 size={12} className="md:w-3.5 md:h-3.5" />
@@ -1139,7 +1139,7 @@ export default function InteractiveMasterPlan() {
                         <span className="text-[9px] md:text-[10px] text-slate-400 font-bold uppercase tracking-widest">Superficie</span>
                         <span className="text-[9px] md:text-[10px] text-navy-main font-bold uppercase tracking-widest">260 m²</span>
                       </div>
-                      <Link 
+                      <Link
                         href={`/contacto?branch=inversiones&investmentType=terreno&lote=${lot.name.replace(' ', '%20')}`}
                         className="mt-3 w-full bg-gold-500 hover:bg-gold-600 text-white font-bold text-[10px] md:text-xs py-2 rounded-lg transition-colors uppercase tracking-widest text-center shadow-md flex justify-center items-center pointer-events-auto"
                       >
