@@ -59,7 +59,7 @@ CONTACT_EMAIL_TO=correo@destino.com
 
 # 3. Seguridad de Cron Jobs
 # Contraseña generada por ti (o por Vercel) para evitar que extraños ejecuten los reportes
-CRON_SECRET=TuContraseñaSecretaSuperSegura
+CRON_SECRET=cualquiercodigo
 ```
 
 ### Configuración SQL (Supabase)
