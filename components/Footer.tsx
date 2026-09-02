@@ -83,10 +83,7 @@ export default function Footer() {
         <div className="border-t border-slate-accent/30 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
           <div className="text-center md:text-left space-y-1">
             <p>
-              © {new Date().getFullYear()} theoferllc, Powered By{" "}
-              <a href="https://www.creartebrands.com/es" target="_blank" rel="noopener noreferrer" className="hover:text-gold-400 transition-colors font-medium">
-                CREARTEBRANDS
-              </a>
+              © {new Date().getFullYear()} theoferllc. Todos los derechos reservados.
             </p>
           </div>
           
