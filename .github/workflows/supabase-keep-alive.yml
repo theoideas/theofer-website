@@ -1,0 +1,28 @@
+name: Mantener Supabase Activo (Keep-Alive)
+
+on:
+  schedule:
+    # Se ejecuta automáticamente todos los Lunes, Miércoles y Viernes a las 10:00 UTC
+    - cron: '0 10 * * 1,3,5'
+  # Permite ejecutarlo manualmente desde la pestaña Actions en GitHub cuando quieras probarlo
+  workflow_dispatch:
+
+jobs:
+  ping-supabase:
+    name: Ping a Supabase DB
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hacer consulta a la API de Supabase
+        run: |
+          RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -X GET "${{ secrets.SUPABASE_URL }}/rest/v1/leads?select=id&limit=1" \
+            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
+            -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}")
+          
+          echo "Respuesta HTTP de Supabase: $RESPONSE"
+          
+          if [ "$RESPONSE" -ge 200 ] && [ "$RESPONSE" -lt 300 ]; then
+            echo "✅ Conexión exitosa con Supabase. Inactividad resuelta."
+          else
+            echo "⚠️ Advertencia: Supabase respondió con código $RESPONSE"
+            exit 1
+          fi
