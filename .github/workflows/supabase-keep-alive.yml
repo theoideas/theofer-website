@@ -13,16 +13,42 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Hacer consulta a la API de Supabase
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
         run: |
-          RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -X GET "${{ secrets.SUPABASE_URL }}/rest/v1/leads?select=id&limit=1" \
-            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
-            -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}")
-          
-          echo "Respuesta HTTP de Supabase: $RESPONSE"
-          
-          if [ "$RESPONSE" -ge 200 ] && [ "$RESPONSE" -lt 300 ]; then
-            echo "✅ Conexión exitosa con Supabase. Inactividad resuelta."
-          else
-            echo "⚠️ Advertencia: Supabase respondió con código $RESPONSE"
+          # Validar que los secrets existan
+          if [ -z "$SUPABASE_URL" ]; then
+            echo "❌ Error: El secret SUPABASE_URL no está definido o está vacío en GitHub Secrets."
             exit 1
           fi
+
+          if [ -z "$SUPABASE_ANON_KEY" ]; then
+            echo "❌ Error: El secret SUPABASE_ANON_KEY no está definido o está vacío en GitHub Secrets."
+            exit 1
+          fi
+
+          # Limpiar espacios en blanco accidentales y barras finales
+          CLEAN_URL=$(echo "$SUPABASE_URL" | tr -d '[:space:]' | sed 's:/*$::')
+          CLEAN_KEY=$(echo "$SUPABASE_ANON_KEY" | tr -d '[:space:]')
+
+          ENDPOINT="${CLEAN_URL}/rest/v1/leads?select=id&limit=1"
+          echo "Haciendo petición a Supabase..."
+
+          HTTP_STATUS=$(curl -s -o response.json -w "%{http_code}" \
+            -H "apikey: ${CLEAN_KEY}" \
+            -H "Authorization: Bearer ${CLEAN_KEY}" \
+            "$ENDPOINT")
+
+          echo "Código HTTP recibido: $HTTP_STATUS"
+          echo "Respuesta del servidor:"
+          cat response.json
+          echo ""
+
+          if [ "$HTTP_STATUS" -ge 200 ] && [ "$HTTP_STATUS" -lt 400 ]; then
+            echo "✅ Conexión exitosa con Supabase. Inactividad resuelta correctamente."
+          else
+            echo "⚠️ Supabase respondió con código de error $HTTP_STATUS"
+            exit 1
+          fi
+
