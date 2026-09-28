@@ -792,7 +792,7 @@ const lotesData = [
   {
     "id": "1788900211525",
     "name": "Lote III-11",
-    "status": "disponible",
+    "status": "vendido",
     "points": [
       {
         "x": 67.7,
@@ -815,7 +815,7 @@ const lotesData = [
   {
     "id": "1788900222047",
     "name": "Lote III-12",
-    "status": "disponible",
+    "status": "vendido",
     "points": [
       {
         "x": 67.7,
