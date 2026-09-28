@@ -700,7 +700,7 @@ const lotesData = [
   {
     "id": "1788900171317",
     "name": "Lote III-07",
-    "status": "disponible",
+    "status": "vendido",
     "points": [
       {
         "x": 67.7,
