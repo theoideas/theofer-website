@@ -332,7 +332,7 @@ const lotesData = [
   {
     "id": "1788899949903",
     "name": "Lote II-03",
-    "status": "disponible",
+    "status": "vendido",
     "points": [
       {
         "x": 44.9,
@@ -700,7 +700,7 @@ const lotesData = [
   {
     "id": "1788900171317",
     "name": "Lote III-07",
-    "status": "vendido",
+    "status": "disponible",
     "points": [
       {
         "x": 67.7,
@@ -723,7 +723,7 @@ const lotesData = [
   {
     "id": "1788900182470",
     "name": "Lote III-08",
-    "status": "vendido",
+    "status": "disponible",
     "points": [
       {
         "x": 67.7,
@@ -792,7 +792,7 @@ const lotesData = [
   {
     "id": "1788900211525",
     "name": "Lote III-11",
-    "status": "vendido",
+    "status": "disponible",
     "points": [
       {
         "x": 67.7,
@@ -815,7 +815,7 @@ const lotesData = [
   {
     "id": "1788900222047",
     "name": "Lote III-12",
-    "status": "vendido",
+    "status": "disponible",
     "points": [
       {
         "x": 67.7,
